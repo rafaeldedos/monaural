@@ -1,0 +1,49 @@
+p {
+  -ms-word-break: break-all;
+  -ms-word-wrap: break-all;
+      word-break: break-word;
+     word-break: break-word;
+  // cleaning up the ragged lines and breaks
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
+  // sets a minimum number of characters before and after the break
+  -webkit-hyphenate-before: 2;
+   -webkit-hyphenate-after: 3;
+           hyphenate-lines: 3;
+  // enabling fancy ligatures when available
+  -webkit-font-feature-settings: "liga", "dlig";
+   -moz-font-feature-settings: "liga=1, dlig=1";
+      -ms-font-feature-settings: "liga", "dlig";
+       -o-font-feature-settings: "liga", "dlig";
+          font-feature-settings: "liga", "dlig";
+}
+
+$base-font-size: 16px;
+$base-line-height: 24px;
+@include establish-baseline;
+
+// COLORS
+$cinza: #363b3f;
+$vermelho: hsla(4, 72.6028%, 57.0588%, 1.0000);
+$verde: #497400;
+$yellow: #edca34;
+
+// LINKS
+$link : #b20000; 
+$hover: black;
+$visited: #FF8818;
+a {@include link-colors($link, $hover, $visited); @include hover-link;}
+
+h1, h2, h3, h4, h5 {font-family: 'Helvetica Neue', Menlo, Helvetica, Arial, sans-serif;}
+h1 {@include adjust-font-size-to(48px)}
+h2 {@include adjust-font-size-to(36px);}
+h3 {@include adjust-font-size-to(24px);}
+h4 {@include adjust-font-size-to(20px);}
+h5 {@include adjust-font-size-to(18px)}
+p, ul, ol {@include leader; @include trailer;}
+
+//nav ul { @include horizontal-list; }
+// ul.words { @include delimited-list ("! ") }
+// td.dot-dot-dot {@include ellipsis;}
+// td { @include nowrap }

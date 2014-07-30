@@ -1,0 +1,47 @@
+@mixin horizontal-list {
+	li {
+		float: left;
+		margin-right: 10px;
+	}
+}
+
+@mixin horizontal-list($spacing: 10px) {
+	li {
+		float: left;
+		margin-right: $spacing;
+	}
+}
+
+@mixin no-bullets {
+  list-style: none;
+  li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0px;
+} }
+
+@mixin link-colors($normal, $hover, $visited) {
+          color: $normal;
+          &:hover { color: $hover; }
+          &:visited { color: $visited; }
+}
+
+%button {
+	margin: 0;
+  padding: .5em 1.2em;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.save {
+	@extend %button;
+	background: blue;
+	color: white;
+}
+
+.delete {
+	@extend %button;
+	background: red;
+	color: white;
+}
+

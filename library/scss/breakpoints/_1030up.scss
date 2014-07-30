@@ -1,0 +1,30 @@
+.banner {
+	div {@include container(94%);}
+}
+
+.stuff {
+	@include container(94%); 
+
+	.panels {
+		div:nth-child(even) {margin-right: 0;}
+		div:nth-child(3n) {@include span(2 of 2);}
+
+		.panel {@include span(1 of 2);}
+	}
+}
+
+footer {
+	@include container(94%);
+	.footer-links {
+		padding: 4em 2em 3em 2em; li {margin-bottom: 1em;}
+		li a {padding: 6px 9px;}
+	}
+	}
+
+.media img {max-width: 200px; }
+
+.contatos {
+	@include container;
+	.social {@include span(5 of 15);}
+	.conteudo {@include span (9 of 15 last)}
+}

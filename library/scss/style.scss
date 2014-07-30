@@ -1,0 +1,75 @@
+@import "compass";
+@import "compass/reset";
+@import "susy";
+@import "compass/layout"; 
+@import "compass/typography";
+
+
+$base-font-size: 16px; $base-line-height: 24px; @include establish-baseline;
+$susy: (global-box-sizing: border-box,  use-custom: (rem: true),  gutters: 0.035  );
+@include border-box-sizing;
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+$sans : Roboto, Helvetica, Arial, "Lucida Grande", sans-serif;
+
+html, body {height: 100%; font-family: $sans; font-weight: 300;}
+menu {font-weight: 400; text-transform: uppercase; letter-spacing: 1px;}
+p, ul, ol, nav {@include leader; @include trailer;}
+strong {font-weight: 500;} em {font-style: italic;}
+
+// variables
+$amarelo: #FFEF0C;
+$violeta: #5900B2;
+$black:             #222;
+$white:             #fff;
+$light-gray:        #f8f9fa;
+$gray:              #eaedf2;
+$text-color:        #5c6b80;
+$meta-gray:         #9fa6b4;
+$blue:              #2980b9;
+$link-color:        #b20000;
+$link-hover:        darken($link-color, 9%);
+$border-color:      #ccc;
+$disabled-gray:     #cfcfcf; 
+
+// stylus
+.fundo-amarelo {background-color: $violeta; color: white;}
+.striped-paragraphs {p:nth-child(odd) {background-color: #eee;} p {margin: 0; padding: 1em;}}
+.striped-list {padding-left: 0; margin-bottom: 0;
+			li:nth-child(odd) {background-color: #eee;}
+			li {margin-bottom: 0; padding: 0.5em 1em;}}
+.black-on-yellow {background-color: $amarelo; color: $black;}
+
+img {max-width: 100%;  height: auto !important;}
+
+@import "breakpoints/base"; 
+
+@media only screen and (min-width: 481px) {
+	@import "breakpoints/481up";
+} // end of media query
+
+@media only screen and (min-width: 768px) {
+	@import "breakpoints/768up";
+} // end of media query
+
+@media only screen and (min-width: 1030px) {
+	@import "breakpoints/1030up";
+} // end of media query
+
+@media only screen and (min-width: 1240px) {
+	@import "breakpoints/1240up";
+} // end of media query
+
+@media only screen and (min-width: 1480px) {
+	.banner div, .stuff, footer {@include container(70%);}
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min--moz-device-pixel-ratio: 1.5),
+       only screen and (min-device-pixel-ratio: 1.5) {
+	@import "breakpoints/2x";
+} 
+
+@media print {
+	@import "partials/print";
+}

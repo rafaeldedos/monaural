@@ -1,0 +1,10 @@
+.banner {
+	div {@include container(90%);}
+}
+
+.stuff {
+	@include container(90%);
+}
+
+footer {@include container(90%);}
+.media img {max-width: 250px; }

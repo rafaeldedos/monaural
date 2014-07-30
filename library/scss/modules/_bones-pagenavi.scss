@@ -1,0 +1,8 @@
+.pagination {margin: 0;
+ul {margin: 0; padding: 0; display: inline-block;
+background-color: $amarelo; white-space: nowrap; clear: both;}
+li {padding: 0; margin: 0; float: left; display: inline; overflow: hidden; 
+border-right: 1px solid $gray;}
+a, span {text-decoration: none; padding: 0.75em; min-width: 1em; display: block; color: black;
+	&:hover, &:focus { @extend .black-on-yellow; }}
+.current {font-weight: 700; background-color: black; color: $amarelo;} }

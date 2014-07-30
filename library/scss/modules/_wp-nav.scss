@@ -1,0 +1,28 @@
+.nav {
+	border-bottom: 0;
+
+	li {
+		&:first-child {margin-top: 0;}
+		&:last-child {margin-bottom: 0;}
+		ul.sub-menu,
+		ul.children {
+			margin-top: 1em; margin-bottom: 0;
+			padding-left: 1em;
+			li {margin-bottom: 0.33em; border: none; text-transform: none;}
+		}
+	} /* end .menu li */
+
+	li.current-menu-item {background-color: transparent;
+		a {color: $black; background-color: $white;}
+		ul.sub-menu {
+			li.menu-item a {background-color: transparent; color: $black; padding: 0;}
+		}
+	}
+} /* end .nav */
+ul.sub-menu, ul.children {display: none;}
+.current_page_item.menu-item-has-children {
+	ul.sub-menu, ul.children {display: block !important;}
+} 
+.current-page-ancestor {
+	ul.sub-menu, ul.children {display: block !important;}
+}
